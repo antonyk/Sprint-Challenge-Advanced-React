@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import Card from './Card';
+import CardList from './CardList';
 
 import axios from 'axios'
 
@@ -12,7 +13,6 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      favorite: [],
       players: []
     }
   }
@@ -51,14 +51,7 @@ class App extends Component {
           <div className='header-spacer'></div>
         </header>
         <section className='app-body'>
-          <section className='fav-players'>
-            <h2>Favorite Players</h2>
-            {this.state.favorite.map(item => <Card key={item.id} player={item} addFavHandler={this.addFavoritePlayer} />)}
-          </section>
-          <section className='player-list'>
-            <h2>All Players</h2>
-            {this.state.players.map(item => <Card key={item.id} player={item} addFavHandler={this.addFavoritePlayer} />)}
-          </section>
+          <CardList players={this.state.players} />
         </section>
       </div>
     );
