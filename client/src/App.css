@@ -37,8 +37,26 @@
   }
 }
 
+.card-item {
+  padding: 5px 15px;
+  margin: 5px 15px;
+  border: 1px solid gainsboro;
+  width: 90%;
+}
 
 .profile-img img {
   width: 120px;
   height: 120px;
+}
+
+
+.dark-mode {
+  color: #fff;
+  background-color: #313843;
+
+}
+
+.navbar {
+  background-color: #1F2022;
+  border: none;
 }

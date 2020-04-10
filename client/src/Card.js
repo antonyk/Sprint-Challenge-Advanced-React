@@ -1,23 +1,26 @@
 import React from 'react'
 
 
-export default function Card() {
+export default function Card(props) {
+
+  // const [saved, ]
+
 
   return (
-      <div>
+    <div className='card-item'>
       <div className='card-title'>
-        <h4>{this.props.user.login}</h4>
-      </div>
-      <div className='profile-img'>
-        <img src={this.props.user.avatar_url} alt={`profile for user ${this.props.user.login}`} />
+        <h2>{props.player.name}</h2>
       </div>
       <div>
-        <a className="App-link" href={this.props.user.repos_url} rel="noopener noreferrer">
-          <span>GitHub Repos</span>
+        <p>
+          {props.player.country}
+        </p>
+        <a name={props.player.id} className="App-link" href='#' rel="noopener noreferrer" onClick={props.addFavHandler}>
+          <span>Add Favorite</span>
         </a>
       </div>
-      <button>
-        Load Children
+      <button onClick={props.addFavHandler}>
+        Add Favorite
       </button>
     </div>
   )
