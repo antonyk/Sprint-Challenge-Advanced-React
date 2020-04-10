@@ -22,6 +22,7 @@ function CardList(props) {
     // this.setState({favorite: [...this.state.favorite, this.state.players[parseInt(e.target.name)]]})
 
   }
+
   function removeFavoritePlayer() {
 
   }
@@ -36,6 +37,7 @@ function CardList(props) {
       <button onClick={toggleDarkMode}>Toggle Dark Mode</button>
       <section className='fav-players'>
         <h2>Favorite Players</h2>
+        <button onClick={() => {setFavorite([])}}>Reset Favorite</button>
         {favorite.map(item => <Card key={item.id} player={item} 
             addFavHandler={removeFavoritePlayer} />)}
       </section>
