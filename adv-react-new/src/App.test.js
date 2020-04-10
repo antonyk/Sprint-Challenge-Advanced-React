@@ -1,14 +1,15 @@
 import React from 'react';
-// import ReactDOM from 'react-dom';
-import {render, cleanup} from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import { render, cleanup } from '@testing-library/react';
 import App from './App';
-// import CardList from './CardList';
-// import './index.css';
-// import {getByText} from '@testing-library/react';
-
 
 afterEach(cleanup);
+
+test('renders learn react link', () => {
+  const { getByText } = render(<App />);
+  const linkElement = getByText(/learn react/i);
+  expect(linkElement).toBeInTheDocument();
+});
+
 
 // first test
 fit('renders without crashing', () => {
@@ -17,7 +18,7 @@ fit('renders without crashing', () => {
 
 });
 
-fit('tests that reset button is present', () => {
+it('tests that reset button is present', () => {
   // Arrange
   const vdom = render(<App />);
 
