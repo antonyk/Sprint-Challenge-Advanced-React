@@ -1,9 +1,30 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
+import {render} from '@testing-library/react';
 import App from './App';
+import CardList from './CardList';
+// import './index.css';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+
+fit('renders without crashing', () => {
+
+  // AAA
+  // first test
+  const vdom = render(<App />);
+
+  const resetBtn = getByText('Reset Favorites');
+
+  expect(addBtn).toHaveLength(1);
+
+
+
+
+
+
+
+
+  // cleanup
+  // cleanup();
+  // ReactDOM.unmountComponentAtNode(div);
 });
+

@@ -4,15 +4,25 @@ import * as rtl from '@testing-library/react';
 import Card from './Card';
 
 
-test('tests card', () => {
+xtest('tests card', () => {
+  return false;
+
+  // arrange
+  const root = document.getElementById('root');
+  // render app
+  const vrom = ReactDOM.render(<App />, root);
+  // const vdom = rtl.render(<Card />);
+
+  // const div = document.createElement('div');
+  // ReactDOM.render(<App />, div);
+  // ReactDOM.unmountComponentAtNode(div);
 
 
-    // render without crashing
-    const vdom = rtl.render(<Card />);
+  // act
 
 
+  // assert
+
+  // cleanup?
+  ReactDOM.unmountComponentAtNode(root);
 });
-
-// it('renders without crashing', () => {
-
-// });
