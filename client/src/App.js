@@ -28,6 +28,7 @@ class App extends Component {
       .catch()
   }
 
+
   addFavoritePlayer(e) {
     e.preventDefault();
     // console.log('add: ' + e.target.name + " value: " + e.target.value);
@@ -51,6 +52,7 @@ class App extends Component {
           <div className='header-spacer'></div>
         </header>
         <section className='app-body'>
+          {/* <button onClick={(e) => this.toggleDarkMode(e)}></button> */}
           <CardList players={this.state.players} />
         </section>
       </div>

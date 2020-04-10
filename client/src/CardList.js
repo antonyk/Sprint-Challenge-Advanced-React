@@ -1,14 +1,16 @@
 import React, { useEffect } from 'react'
 import { useLocalStorage } from "./hooks/useLocalStorage"
+import { useDarkMode } from './hooks/useDarkMode'
 import Card from './Card'
 
 function CardList(props) {
 
   const [favorite, setFavorite] = useLocalStorage('fav-players', []);
+  const [isDark, setDarkMode] = useDarkMode('dark-mode', '.app-body', true);
 
-  useEffect(() => {
+  // useEffect(() => {
 
-  }, []);
+  // }, []);
 
   function addFavoritePlayer(e) {
     e.preventDefault();
@@ -24,8 +26,14 @@ function CardList(props) {
 
   }
 
+  function toggleDarkMode(e) {
+    e.preventDefault();
+    setDarkMode(!isDark);
+  }
+
   return (
     <>
+      <button onClick={toggleDarkMode}>Toggle Dark Mode</button>
       <section className='fav-players'>
         <h2>Favorite Players</h2>
         {favorite.map(item => <Card key={item.id} player={item} 
