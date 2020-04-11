@@ -1,9 +1,31 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
+import {render, cleanup} from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 import App from './App';
+// import CardList from './CardList';
+// import './index.css';
+// import {getByText} from '@testing-library/react';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+
+afterEach(cleanup);
+
+// first test
+fit('renders without crashing', () => {
+  // Arrange
+  const vdom = render(<App />);
+
 });
+
+fit('tests that reset button is present', () => {
+  // Arrange
+  const vdom = render(<App />);
+
+  const resetBtn = getByText('Reset Favorites');
+
+  // assert
+  expect(addBtn).toHaveLength(1);
+
+
+});
+
